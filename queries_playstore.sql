@@ -51,3 +51,6 @@ SELECT app_name, reviews, min_installs, CAST(reviews AS FLOAT)/min_installs AS r
 FROM analytics
 WHERE reviews > 100000
 ORDER BY ratio DESC LIMIT 1;
+
+-- FS3. Find all the apps that have more than 1 genre. --
+SELECT app_name, genres FROM analytics WHERE CARDINALITY(genres) > 1;
